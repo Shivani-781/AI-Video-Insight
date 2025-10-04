@@ -16,3 +16,4 @@ pypdf
 rapidocr-onnxruntime
 requests
 chromadb
+pysqlite3-binary
