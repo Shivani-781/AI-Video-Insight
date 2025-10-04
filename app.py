@@ -1,3 +1,9 @@
+# For deployment
+__import__('pysqlite3')
+import sys
+sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
+
+# Imports
 import streamlit as st
 from main import extract_video_id, get_transcript, translate_transcript_to_english, get_important_topics, generate_notes, create_chunks, create_vector_store, rag_answer
 
