@@ -5,7 +5,7 @@ AI Video Insight is a Streamlit application that allows users to analyze and ext
 Try the app here: https://ai-video-insight.streamlit.app/
 
 ## **Note:
-This project relies on the YouTube API. Due to restrictions on cloud-hosted apps, API calls may be blocked when using the public Streamlit link. The app is deployed using proxy servers, so there is approximately a 50% chance the app will work online. For best results, run the app locally or use a paid API plan.
+This project relies on the YouTube API. Due to restrictions on cloud-hosted apps, API calls may be blocked when using the public Streamlit link. The app is deployed using [proxy servers](https://www.webshare.io/features/free-proxy), so there is approximately a 50% chance the app will work online. For best results, run the app locally or use a paid API plan.
 
 ## Features
 * **Summarize Video**: Automatically extract important topics and generate summary notes from any YouTube video.
