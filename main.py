@@ -5,6 +5,7 @@ from langchain_core.prompts import ChatPromptTemplate
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_chroma import Chroma
 from langchain_huggingface import HuggingFaceEmbeddings
+from youtube_transcript_api.proxies import WebshareProxyConfig
 import os
 import time
 import streamlit as st
@@ -31,10 +32,16 @@ def get_transcript(video_id, language):
     """
     Fetches the transcript of the YouTube video using YouTube Transcript API.
     """
-    ytt_api = YouTubeTranscriptApi()
+    # ytt_api = YouTubeTranscriptApi()
+    ytt_api = YouTubeTranscriptApi(
+        proxy_config=WebshareProxyConfig(
+            proxy_username="uiwynuio",
+            proxy_password="y3tljx1ygjd0",
+        )
+    )
     try:
         transcript = ytt_api.fetch(video_id, languages=[language])
-        time.sleep(10)
+        time.sleep(40)
         return " ".join([entry.text for entry in transcript])
     except (TranscriptsDisabled, NoTranscriptFound):
         st.error("Transcript not available for this video. Please check the language or try a different video.")
